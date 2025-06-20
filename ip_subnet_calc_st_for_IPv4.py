@@ -62,12 +62,12 @@ def add_ip(ip, offset):
 
 st.title("🌐 IP 網段資訊計算器")
 
-ip_input = st.text_input("請輸入 IP（支援 CIDR 或遮罩格式）", "192.168.1.70/26")
+ip_input = st.text_input("請輸入 IP（支援 CIDR 或遮罩格式）", "192.168.1.1/24")
 
 # 當使用非CIDR格式才需要輸入遮罩
 subnet_mask = ""
 if "/" not in ip_input:
-    subnet_mask = st.text_input("請輸入 Subnet Mask", "255.255.255.192")
+    subnet_mask = st.text_input("請輸入 Subnet Mask", "255.255.255.0")
 
 if st.button("開始計算"):
     try:
